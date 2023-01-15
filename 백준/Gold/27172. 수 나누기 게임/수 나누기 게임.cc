@@ -6,22 +6,12 @@ typedef long long ll;
 const ll MAX_NUM = 1e6 + 6;
 const int MAX_N = 1e5 + 5;
 
-int sp[MAX_NUM], n, x[MAX_N], x2Idx[MAX_NUM], ans[MAX_N];
+int n, x[MAX_N], x2Idx[MAX_NUM], ans[MAX_N];
 bool oneFlag;
-vector<int> prime;
 
 int main()
 {
   ios_base::sync_with_stdio(0), cin.tie(0);
-
-  for(int i=2; i<MAX_NUM; ++i) {
-    if(!sp[i]) prime.push_back(i);
-    for(auto& p : prime) {
-      if(1LL*i*p > MAX_NUM) break;
-      sp[i*p] = p;
-      if(i%p == 0) break;
-    }
-  }
 
   memset(x2Idx, -1, sizeof(x2Idx));
 
